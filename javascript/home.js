@@ -7,5 +7,22 @@ document.getElementById('btn-add-money').addEventListener('click', function(even
      const addMoneyInput = document.getElementById('input-add-money').value;
 //    get the  pin number
      const pinNumber =document.getElementById('pin-number').value;
-     
+    //  step 3: verify pin number
+     if(pinNumber === '1234'){
+        console.log('Adding money to your account');
+         //  step 4: get the current balance
+         const balance = document.getElementById('account-balance').innerText;
+        // step 5: add addMoneyInput with balance
+        const addMoneyNumber = parseFloat(addMoneyInput);
+        const balanceNumber = parseFloat(balance);
+        const newBalance = balanceNumber + addMoneyNumber;
+        console.log(newBalance);
+        // step 6: update the balance in the UI/DOM
+        document.getElementById('account-balance').innerText = newBalance;
+     }
+     else{
+        alert('Failed to add money! Please try again')
+     }
+   
+
 })
